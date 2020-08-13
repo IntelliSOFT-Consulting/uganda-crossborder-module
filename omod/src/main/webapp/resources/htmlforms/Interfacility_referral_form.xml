@@ -1,4 +1,15 @@
-<htmlform formName="Interfacility referral form" formEncounterType="e22e39fd-7db2-45e7-80f1-60fa0d5a4378" formDescription="Interfacility referral form" formUuid="67a71486-1a54-468f-ac3e-AA91a9a79545" formVersion="1.0" formAddMetadata="yes" formUILocation="patientDashboard.visitActions" formOrder="1" formIcon="icon-stethoscope" formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false" formDisplayStyle="Standard" formLabel="Interfacility referral form">
+<htmlform formName="Interfacility referral form" 
+formEncounterType="e22e39fd-7db2-45e7-80f1-60fa0d5a4378" 
+formDescription="Interfacility referral form" 
+formUuid="67a71486-1a54-468f-ac3e-AA91a9a79545" 
+formVersion="1.0" 
+formAddMetadata="yes" 
+formUILocation="patientDashboard.visitActions" 
+formOrder="1" 
+formIcon="icon-stethoscope" 
+formShowIf="(visit.active || !visit.active) &amp;&amp; patient.person.dead==false" 
+formDisplayStyle="Standard" 
+formLabel="Interfacility referral form">
 
     <section headerLabel="1. Encounter Details">
         <table class="baseline-aligned">
