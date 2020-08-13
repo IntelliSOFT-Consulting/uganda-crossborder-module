@@ -14,15 +14,99 @@
 <section headerLabel="1. Encounter Details">
 		<table class="baseline-aligned">
 			<tr>
-				<td>Date:</td>
-				<td><encounterDate default="today"/>  
+				
+			     <td><encounterDate default="today"/>  
                               <encounterType default="e22e39fd-7db2-45e7-80f1-60fa0d5a4378" />                           
-                              <encounterLocation  default="SessionAttribute:emrContext.sessionLocationId"/>
-                              <encounterProvider   default="currentUser"/></td>
+                              <encounterLocation  default="SessionAttribute:emrContext.sessionLocationId"/> </td>
+                             
 			</tr>
 			
 		</table>
 	</section>
 
+        <section >
+		
+           <fieldset>
+            <legend> Client personal identification </legend>
+               
+               <p>
+                Nationality <obs conceptId="8143023b-e9d9-4c9f-91b8-7c82b5524412" id="nationality" />
+               </p>
+
+                <p>
+                Referring facility name <obs conceptId="03420802-8337-4546-9aa9-2ae023b2b47b" id="refferFacility" />
+               </p>
+
+              <p>
+                Referred facility name <obs conceptId="162724" id="refeeredFacility" />
+               </p>
+
+               <p>
+               Type of care <obs conceptId="3c0fd4fa-4029-4241-a674-02ab1b206975" id="typeOfCare" />
+               </p>
+
+
+               <p>
+               Date of referral <obs conceptId="163181" id="typeOfCare" allowTime="false"/>
+               </p>
+
+                <p>
+                 CB-HIPP Site <obs conceptId="f9add80b-5a50-42e7-9562-1217efd63474" id="" />
+               </p>
+
+                <p>
+                 Target Population <obs conceptId="adfadaae-3509-4e88-917c-d6a0de8a1a42" id="" />
+               </p>
+         
+            
+
+           </fieldset>
+	</section>
+
+
+          <section >
+		
+           <fieldset>
+            <legend> Reason for referral</legend>
+               
+               <p>
+               Reason for referral <obs conceptId="1887" id="" />
+               </p>
+
+               <p>
+               General comments if referred for ART	 <obs conceptId="161011" id="" style="textarea" rows="3" cols = "10"/>
+               </p>
+
+                <p>
+                  Referral Recommendations:	 <obs conceptId="63cd7c14-2cd8-4db9-9df8-6ad2608fb6d6" id="" style="textarea" rows="3" cols = "10"/>
+               </p>
+
+
+           </fieldset>
+	</section>
+
+         <section >
+		
+           <fieldset>
+            <legend>Referring Health Care Provider</legend>
+               
+               <p>
+                Provider Name <encounterProvider   default="currentUser"/>
+               </p>
+
+               <p>
+               Email<obs conceptId="b24e70a6-ea2c-4abf-bb92-5c17a8b79ea7" id="" />
+               </p>
+
+                <p>
+                  Telephone number <obs conceptId="273a0f4e-894b-49c9-bd09-67a4284e614c" id="" />
+               </p>
+              <p>
+                  Cadre <obs conceptId="	14cd3973-8355-41c1-9674-b5e2811f0299" id="" />
+               </p>
+
+
+           </fieldset>
+	</section>
  <submit />
 </htmlform>
