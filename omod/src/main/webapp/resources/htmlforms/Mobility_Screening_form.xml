@@ -11,70 +11,145 @@
           formDisplayStyle="Standard"
           formLabel="Mobility Screening form">
 
-    <section headerLabel="1. Encounter Details">
-		<table class="baseline-aligned">
+    <script type="text/javascript">
+      jq(function($) {
+
+         var travelled3m = getField("travelled-3m.value");
+         var travelled6m = getField("travelled-6m.value");
+         var travelled12m = getField("travelled-12m.value");
+
+         var showHideTravelInfo = function () {
+   
+            if (getValue("travelled-3m.value") == 1065) {
+               travelled6m.hide();
+               travelled12m.hide();
+            } else {
+               travelled6m.show();
+               travelled12m.show();
+            }
+   
+            if (getValue("travelled-6m.value") == 1065) {
+               travelled12m.hide();
+            }   
+         };
+
+         travelled3m.change(showHideTravelInfo);
+         travelled6m.change(showHideTravelInfo);
+         travelled12m.change(showHideTravelInfo);
+
+       });
+    </script>          
+    <section headerLabel="Encounter Details">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>				
-			     <td><encounterDate default="today"/>  
+              <td>
+                 <encounterDate default="today"/> 
+                  <span style="display: none;"> 
                               <encounterType default="e22e39fd-7db2-45e7-80f1-60fa0d5a4378" />                           
                               <encounterLocation  default="SessionAttribute:emrContext.sessionLocationId"/>
-                              <encounterProvider   default="currentUser"/></td>
+                  </span>
+               </td>
+            <td>
+                  <encounterProvider   default="currentUser"/>
+            </td>
 			</tr>
 			
 		</table>
 	</section>
 
-    <section >
+    <section  headerLabel="Visit Details">
 
-        <fieldset>
-            <legend>Vist Details</legend>
-
-            <p>
-               Implementation site <obs conceptId="f9add80b-5a50-42e7-9562-1217efd63474" id="" />
-            </p>
-            <p>
-               Vist Type <obs conceptId="164181" id="" />
-            </p>       
-
-        </fieldset>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+               <tr>
+                  <td>
+                     Implementation site <obs conceptId="f9add80b-5a50-42e7-9562-1217efd63474" id="" />
+                  </td>
+                  <td>
+                     Vist Type <obs conceptId="164181" id="" style="dropdown"/>
+                  </td>
+               </tr>
+            </table>
     </section>
 
-    <section >
+    <section headerLabel="Screening Details">
 
-        <fieldset>
-            <legend>Other Details</legend>
-
-            <p>
-               Nationality <obs conceptId="8143023b-e9d9-4c9f-91b8-7c82b5524412" id="" />
-            </p>
-            <p>
+      <table>
+         <tr>
+            <td>
+               Nationality <obs conceptId="8143023b-e9d9-4c9f-91b8-7c82b5524412" id="" style="dropdown"/>
+            </td>
+            <td>
                Target Population <obs conceptId="adfadaae-3509-4e88-917c-d6a0de8a1a42" id="" />
-            </p> 
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <p>
+                  Have you travelled to another country in the last 3 months? <obs conceptId="ba0b206f-d863-43b5-8c88-536f0ff3765b" id="travelled-3m" 
+                  answerConceptIds="1065,1066"
+                  style="dropdown"/>
+               </p>    
+            </td>
+            <td>
+               <p>
+                  Have you travelled to another country in the last 6 months? 
+                  <obs conceptId="ae481d5d-8585-4d88-86d9-7c2c051c223b" id="travelled-6m" 
+                  answerConceptIds="1065,1066"
+                  style="dropdown"/>
+               </p>     
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <p>
+                  Have you travelled to another country in the last 12 months? <obs conceptId="0872c498-a7fb-4f81-9e08-bab5fd972dab" id="travelled-12m" 
+                  answerConceptIds="1065,1066"
+                  style="dropdown"/>
+               </p>    
+            </td>
+            <td>
+               <p>
+                  How long (in days) did you stay last time you travelled to another country? <obs conceptId="3bc8edf0-2d9d-4841-ad88-c308a58dd1a3" id="" />
+               </p>     
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <p>
+                  How frequently do you travel to another country? <obs conceptId="d79f042b-664c-4759-9968-21fe25f50272" id="" />
+               </p>    
+            </td>
+            <td>
+               <p>
+                  Service <obs conceptId="3c0fd4fa-4029-4241-a674-02ab1b206975" id="" 
+                  answerConceptIds="160631,
+                                    160541,
+                                    5483,
+                                    159937,
+                                    5000031,
+                                    160546,
+                                    165049,
+                                    5622"
+                  answerLabels="Hiv,
+                                 TB,
+                                 FP/RH,
+                                 MNCH/ANC,
+                                 GBV,
+                                 STI,
+                                 ART,
+                                 Other"/>
+               </p>                
+            </td>
+         </tr>
+      </table>
 
-            <p>
-               Have you travelled to another country in the last 3 months? <obs conceptId="ba0b206f-d863-43b5-8c88-536f0ff3765b" id="" />
-            </p> 
 
-            <p>
-               Have you travelled to another country in the last 6 months? <obs conceptId="ae481d5d-8585-4d88-86d9-7c2c051c223b" id="" />
-            </p>  
 
-             <p>
-               Have you travelled to another country in the last 12 months? <obs conceptId="0872c498-a7fb-4f81-9e08-bab5fd972dab" id="" />
-            </p> 
             
-            <p>
-               How long (in days) did you stay last time you travelled to another country? <obs conceptId="3bc8edf0-2d9d-4841-ad88-c308a58dd1a3" id="" />
-            </p>  
 
-            <p>
-               How frequently do you travel to another country? <obs conceptId="d79f042b-664c-4759-9968-21fe25f50272" id="" />
-            </p> 
 
-             <p>
-               Service <obs conceptId="3c0fd4fa-4029-4241-a674-02ab1b206975" id="" />
-            </p>       
 
-        </fieldset>
+
     </section>
 
  <submit />
