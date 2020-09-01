@@ -35,5 +35,17 @@
         <addForeignKeyConstraint constraintName="ugandacrossborder_item_owner_fk" baseTableName="ugandacrossborder_item" baseColumnNames="owner"  referencedTableName="users"
                                  referencedColumnNames="user_id" />
     </changeSet> -->
+    <!-- Global property -->
+    <changeSet id="ugandacrossborder-20200901000000" author="moshonk">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM global_property WHERE property="ugandaemrcrossborder.crossborderSiteCluster" </sqlCheck>
+        </preConditions>
+        <insert tableName="global_property">
+            <column name="property" value="ugandaemrcrossborder.crossborderSiteCluster" />
+            <column name="description" value="Cross border site cluster name for this facility" />
+            <column name="uuid" value="7cfa5b37-ccc5-4f77-9a2d-e2353a6f0dee" />
+        </insert>
+    </changeSet>
+    
  
 </databaseChangeLog>

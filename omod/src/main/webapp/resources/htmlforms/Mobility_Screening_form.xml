@@ -36,6 +36,15 @@
          travelled3m.change(showHideTravelInfo);
          travelled6m.change(showHideTravelInfo);
          travelled12m.change(showHideTravelInfo);
+         
+         
+         var facilityName = '<lookup expression="fn.globalProperty('aijar.healthCenterName')" />';
+         var facilityCode = '<lookup expression="fn.globalProperty('ugandaemr.dhis2.organizationuuid')" />';
+         var crossborderSiteName = '<lookup expression="fn.globalProperty('ugandaemrcrossborder.crossborderSiteCluster')" />';
+         
+         setValue("facility-name.value", facilityName);
+         setValue("facility-code.value", facilityCode);
+         setValue("crossborder-site-cluster-name.value", crossborderSiteName);
 
        });
     </script>          
@@ -60,12 +69,16 @@
     <section  headerLabel="Visit Details">
 
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+            	<td>Facility name: <obs conceptId="162724AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" id="facility-name"></obs></td>
+            	<td>Facility code: <obs conceptId="fc397476-5e95-4523-8c64-c47c3fde11fe"  id="facility-code"/></td>
+            </tr>
                <tr>
                   <td>
-                     Implementation site <obs conceptId="f9add80b-5a50-42e7-9562-1217efd63474" id="" />
+                     Cross-border site cluster <obs conceptId="2a43c30c-9b78-47c7-8b85-92765e426c52" id="crossborder-site-cluster-name" />
                   </td>
                   <td>
-                     Vist Type <obs conceptId="164181" id="" style="dropdown"/>
+                     Identified as mobile? <obs conceptId="164181" id="" style="dropdown" answerConceptIds="164180,160530" answerLabels=" First time,Continuing mobile visit"/>
                   </td>
                </tr>
             </table>
@@ -79,7 +92,7 @@
                Nationality <obs conceptId="8143023b-e9d9-4c9f-91b8-7c82b5524412" id="" style="dropdown"/>
             </td>
             <td>
-               Target Population <obs conceptId="adfadaae-3509-4e88-917c-d6a0de8a1a42" id="" />
+               Cross border target Population <obs conceptId="adfadaae-3509-4e88-917c-d6a0de8a1a42" id="" />
             </td>
          </tr>
          <tr>
@@ -142,14 +155,6 @@
             </td>
          </tr>
       </table>
-
-
-
-            
-
-
-
-
     </section>
 
  <submit />
